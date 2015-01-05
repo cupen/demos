@@ -27,7 +27,7 @@ statusMoveDef = {
 
     '*' : (
         (6,7,0),
-        (2,6,2),
+        (2,6,1),
     ),
 
     '\"' : (
@@ -68,14 +68,17 @@ def strip_comment(text):
     """
     rs = []
     status = 1
+    oldStatus = 1
     for c in text:
         oldStatus = status
         status,delChar = status_move(status, c)
-        # print("%s status %d => %d, del:%d" % (c, oldStatus, status, delChar) )
+        # print(" %s status %d => %d, del:%d" % (c, oldStatus, status, delChar) )
         if delChar > 0: rs = rs[:-delChar]
         if 5 <= status <= 9:
             continue
         
+        if oldStatus == 7 and status == 1:
+            continue # shit 
         rs.append(c)
 
     return "".join(rs)
