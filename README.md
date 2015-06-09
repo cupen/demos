@@ -1,27 +1,14 @@
 # Introduction
-`strip__comment`,just as you saw. It is use for strip comment which was C style.But,be careful! It just a demo,so don’t overwriting your code with the output of it.Good Luck! :smile:
+I'm learning do some interesting things. These was some demos written by myself,.Good Luck! :smile:
 
-# Requirements
-
-* Python
-
-# Usage
-
-```bash
-$ python3 demo.py fileName.c
-```
-e.g.:
-```bash
-$ python3 demo.py test/c.c
-```
+我在学着做点有趣的事，随手瞎写些乱七八糟的代码放这里了，有想法尽管提，只要别打我。
 
 # Licence
 
 <a href="http://www.wtfpl.net/">
-	<img 
+	<img
 		src="http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-1.png"
-		width="88" 
-		height="31" 
+		width="88"
+		height="31"
 		alt="WTFPL" />
 </a>
-
