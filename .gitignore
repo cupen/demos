@@ -1,4 +1,7 @@
-/.idea
-.py[cd]
+*.exe
+*.lock
+dongka/target/
+.*
+*.py[cd]
+*.db
 __pycache__/
-/rest/*.db
