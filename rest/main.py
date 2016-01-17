@@ -2,10 +2,8 @@ import json
 from collections import OrderedDict
 
 from flask import Flask, session, request, make_response
-# from flaskext.sqlalchemy import SQLAlchemy
 from flask.views import MethodView
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import Table, MetaData, create_engine
+from sqlalchemy import MetaData
 from sqlalchemy.orm import Session
 import init_db
 
@@ -19,7 +17,7 @@ scheme.reflect(engine)
 @app.route('/')
 def hello_world():
     rs = {
-        'schemes':[
+        'schemas':[
             'test',
         ]
     }
@@ -64,16 +62,16 @@ def table(database, table):
         # rs.append(row.__dict__)
     return json.dumps(rs)
 
-class CounterAPI(MethodView):
-
-    def get(self):
-        return session.get('counter', 0)
-
-    def post(self):
-        session['counter'] = session.get('counter', 0) + 1
-        return 'OK'
-
-app.add_url_rule('/counter', view_func=CounterAPI.as_view('counter'))
+# class CounterAPI(MethodView):
+#
+#     def get(self):
+#         return session.get('counter', 0)
+#
+#     def post(self):
+#         session['counter'] = session.get('counter', 0) + 1
+#         return 'OK'
+#
+# app.add_url_rule('/counter', view_func=CounterAPI.as_view('counter'))
 
 if __name__ == '__main__':
-    app.run()
+    app.run('0.0.0.0', 5000)

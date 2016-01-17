@@ -1,7 +1,5 @@
 from collections import OrderedDict
-
 from sqlalchemy import create_engine, MetaData, Table, Integer, String, Column
-from sqlalchemy.orm import Session
 
 def create_testdb(database, reCreate=False):
     dbfile = database + '.db'

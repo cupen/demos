@@ -1,0 +1,4 @@
+/.idea
+.py[cd]
+__pycache__/
+/rest/*.db
